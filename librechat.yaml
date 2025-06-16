@@ -41,15 +41,21 @@ endpoints:
     capabilities: ["execute_code", "file_search", "actions", "tools"]
     
   custom:
-    - name: "Deepseek"
-      apiKey: "${DEEPSEEK_API_KEY}"
-      baseURL: "https://api.deepseek.com/v1"
+    - name: 'groq'
+      apiKey: '${GROQ_API_KEY}'
+      baseURL: 'https://api.groq.com/openai/v1/'
       models:
-        default: ["deepseek-chat", "deepseek-coder", "deepseek-reasoner"]
-        fetch: true
+        default: [
+          "llama3-70b-8192",
+          "llama3-8b-8192",
+          "llama2-70b-4096",
+          "mixtral-8x7b-32768",
+          "gemma-7b-it",
+          ]
+        fetch: false
       titleConvo: true
-      titleModel: "deepseek-chat"
-      modelDisplayLabel: "Deepseek"
+      titleModel: 'mixtral-8x7b-32768'
+      modelDisplayLabel: 'groq'
     
     - name: "Mistral"
       apiKey: "${MISTRAL_API_KEY}"
