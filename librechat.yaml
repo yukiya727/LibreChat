@@ -47,15 +47,15 @@ endpoints:
     - name: 'groq'
       apiKey: '${GROQ_API_KEY}'
       baseURL: 'https://api.groq.com/openai/v1/'
-      # models:
-      #   default: [
-      #     "llama3-70b-8192",
-      #     "llama3-8b-8192",
-      #     "llama2-70b-4096",
-      #     "mixtral-8x7b-32768",
-      #     "gemma-7b-it",
-      #     ]
-      #   fetch: false
+      models:
+        default: [
+          "llama3-70b-8192",
+          "llama3-8b-8192",
+          "llama2-70b-4096",
+          "mixtral-8x7b-32768",
+          "gemma-7b-it",
+          ]
+        fetch: false
       titleConvo: true
       titleModel: 'mixtral-8x7b-32768'
       modelDisplayLabel: 'groq'
@@ -63,9 +63,9 @@ endpoints:
     - name: "Mistral"
       apiKey: "${MISTRAL_API_KEY}"
       baseURL: "https://api.mistral.ai/v1"
-      # models:
-      #   default: ["mistral-tiny", "mistral-small", "mistral-medium", "mistral -large-latest"]
-      #   fetch: true
+      models:
+        default: ["mistral-tiny", "mistral-small", "mistral-medium", "mistral -large-latest"]
+        fetch: true
       titleConvo: true
       titleModel: "mistral-tiny"
       modelDisplayLabel: "Mistral"
@@ -74,9 +74,9 @@ endpoints:
     - name: "xai"
       apiKey: "${XAI_API_KEY}"
       baseURL: "https://api.x.ai/v1"
-      # models:
-      #   default: ["grok-beta"]
-      #   fetch: true
+      models:
+        default: ["grok-beta"]
+        fetch: true
       titleConvo: true
       titleMethod: "completion"
       titleModel: "grok-beta"
