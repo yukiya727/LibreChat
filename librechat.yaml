@@ -19,29 +19,21 @@ registration:
     - "openid"
 
 endpoints:
-  # assistants:
-  #     disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
-  #     pollIntervalMs: 3000  # Polling interval for checking assistant updates
-  #     timeoutMs: 180000  # Timeout for assistant operations
-  #     # Should only be one or the other, either `supportedIds` or `excludedIds`
-  #     supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
-  #     # excludedIds: ["asst_excludedAssistantId"]
-  #     # Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
-  #     # privateAssistants: false # Does not work with `supportedIds` or `excludedIds`
-  #     # # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
-  #     # retrievalModels: ["gpt-4-turbo-preview"]
-  #     # # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-  #     # capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
-
-  agents:
-    # (optional) Default recursion depth for agents, defaults to 25
-    recursionLimit: 50
-    # (optional) Max recursion depth for agents, defaults to 25
-    maxRecursionLimit: 100
-    # (optional) Disable the builder interface for agents
+  # azureAssistants: # <-- Azure-specific configuration has the same structure as `assistants`
+    #  pollIntervalMs: 500
+    #  timeoutMs: 10000
+ 
+  assistants:
     disableBuilder: false
-    # (optional) Agent Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-    capabilities: ["execute_code", "file_search", "actions", "tools"]
+    # Use either `supportedIds` or `excludedIds` but not both
+    supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
+    # excludedIds: ["asst_excludedAssistantId"]
+    # `privateAssistants` do not work with `supportedIds` or `excludedIds`
+    # privateAssistants: false
+    # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
+    # retrievalModels: ["gpt-4-turbo-preview"]
+    # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
+    # capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
     
   custom:
     - name: 'groq'
