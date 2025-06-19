@@ -1,3 +1,5 @@
+version: 1.2.1
+
 # Cache settings: Set to true to enable caching
 cache: true
 
