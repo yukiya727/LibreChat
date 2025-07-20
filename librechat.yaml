@@ -18,6 +18,13 @@ registration:
     - "google"
     - "openid"
 
+webSearch:
+  # Search Provider Configuration
+  serperApiKey: "${SERPER_API_KEY}"
+  searxngInstanceUrl: "${SEARXNG_INSTANCE_URL}"
+  searxngApiKey: "${SEARXNG_API_KEY}"
+  searchProvider: "serper" # Options: "serper", "searxng"
+
 endpoints:
   # azureAssistants: # <-- Azure-specific configuration has the same structure as `assistants`
     #  pollIntervalMs: 500
